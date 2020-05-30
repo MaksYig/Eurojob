@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/style.min.css" />
   </head>
   <body>
-    <header class="header">
+    <header class="header " id="s0" >
       <div class="container">
         
         <div class="header__top">
@@ -33,6 +33,9 @@
               <nav class="header__top-menu">
                
                 <ul class="top__menu-list">
+                  <li class="top__menu-link">
+                    <a href="#s0">Home</a>
+                  </li>
                   <li class="top__menu-link">
                     <a href="#s1">Our offer</a>
                   </li>
@@ -90,6 +93,29 @@
             <h2>Legal work in Europe in sunny Greece</h2>
           </div>
         </div>
+            <!-- Number counting block -->
+
+    <section class="number">
+      <div class="container">
+        <div class="number__inner">
+          <div class="counter col-fourth" >
+            <img class="count__img" src="img/cv.svg" alt="">
+            <h3 class="count__number">176</h3>
+            <p class="count__text">CV Uploaded</p>
+          </div>
+          <div class="counter col-fourth" >
+            <img class="count__img" src="img/employer.svg" alt="">
+            <h3 class="count__number">154</h3>
+            <p class="count__text">Employers Recruitered</p>
+          </div>
+          <div class="counter col-fourth end" >
+            <img class="count__img" src="img/customer.svg" alt="">
+            <h3 class="count__number">100</h3>
+            <p class="count__text">Happy Customers</p>
+          </div>
+        </div>
+      </div>
+    </section>
       </div>
     </header>
     <section class="slider__top">
@@ -389,6 +415,8 @@
       </div>
     </section>
 
+
+
     <!-- Review Block -->
     <section class="review">
       <div class="container">
@@ -504,61 +532,67 @@
     </footer>
 
     <div id="animatedModal" class="animated-modal">
-      <!-- Hidden Required Fields -->
-      <form action="/feedback/mail.php" data-form="form">
+
+      <!-- Form -->
+      <form action="/feedback/mail.php" enctype="multipart/form-data" data-form="form">
 		
         <!-- Скрытые обязательные поля -->
         <input type="hidden" name="site_name" value="Site name">
-        <input type="hidden" name="mail_subject" value="New candidate upload information">
-        <input type="hidden" name="page" value="Eurojob site form">
-        <!-- END Hidden Required Fields -->
-
-        <div class="form__header">
-          <div class="form__logo">
-            <img src="img/logo.png" alt="" />
-          </div>
-          <div class="form__header-text">
-            You are on the right way. For staring your proccese, please fill the
-            form and upload your cv file.
-          </div>
+        <input type="hidden" name="mail_subject" value="Форма обратной связи 2">
+        <input type="hidden" name="page" value="Страница формы, форма в шапке">
+  
+        <!-- Поля формы -->
+        <div class="form__inner">
+          <div class="form__head">
+        <div class="popup__block-logo">
+          <img class="popup__block-img" src="img/logo.png" alt="">
         </div>
-        <fieldset class="upload__cv">
-          <label>
-            First and Last name
-            <input type="text" name="user_name" required />
-          </label>
-          <label>
-            Your phone number
-            <input type="tel" name="user_phone" required />
-          </label>
-          <label>
-            Your Email-Adress
-            <input type="email" name="user_email" required />
-          </label>
-          <label>
-            Your native language is:
-            <select name="language" required>
-              <option value="Hebrew" selected>Hebrew</option>
-              <option value="English">English</option>
-              <option value="Russian">Russian</option>
-            </select>
-          </label>
-          <label>
-            Attach your CV file
-            <input type="file" name="file" required />
-          </label>
-          <label>
-            Your comment here
-            <textarea
-              name="comment"
-              placeholder="Enter your comment here"
-            ></textarea>
-          </label>
-          <button id="submit" type="submit">Submit and send</button>
-          <!-- <input id="submit" type="submit" value="Send" /> -->
-        </fieldset>
-      </form>
+        <div class="popup__info-title">
+      
+          <h3>CV Upload form</h3>
+          </div>
+          <div class="popup__info-text">
+          <p>You are on the right way to changing your life</p>
+          <p>Please fill the form in English and Upload your CV file olso in English language.</p>
+          </div>
+
+      </div>
+        <input type="text" name="user_name" placeholder="Your name">
+  
+        <input type="text" name="user_phone" placeholder="Your phone number">
+
+        <input type="text" name="user_email" placeholder="Email">
+        <div class="popup_label-inner">
+          <h4>Choose your native language</h4>
+          
+        <select name="select">
+          <option selected disabled>Choose your native language</option>
+          <option value="Hebrew">Hebrew</option>
+          <option value="Danish">Danish</option>
+          <option value="German">German</option>
+          <option value="Dutch">Dutch</option>
+        </select>
+        </div>
+        <div class="popup_label-inner">
+          <h4>Choose your CV file to upload</h4>
+         
+       <div class="fl_upld">
+       
+        <label> <input type="file" id="fl_inp" multiple="multiple" >Choose your CV file</label>
+        <div id="fl_nm">File not choosen</div>
+        </div>
+        <p>**Your CV has to be in English language </p><p>** DOC or PDF formats only.</p>
     </div>
+        <textarea name="message" placeholder="Enter your comment"></textarea>
+        <button type="submit">Confirm and send</button>
+        </div>
+      </form>
+        
+       
+            
+          
+          
+      
 
     <!-- More Info Information in Buttons -->
 
@@ -609,6 +643,7 @@
       </div>
     </div>
 
+    <!-- Popup relocation information button -->
     <div class="popup" id="offer_relocation">
       <div class="popup__block-logo">
         <img class="popup__block-img" src="img/logo.png" alt="">
@@ -632,7 +667,7 @@
       </div>
     </div>
 
-
+<!-- Popup salary information button -->
     <div class="popup" id="offer_salary">
       <div class="popup__block-logo">
         <img class="popup__block-img" src="img/logo.png" alt="">
@@ -655,7 +690,7 @@
         After all your documents are ready, we will buy you flight ticket to Greece.
       </div>
     </div>
-
+<!-- Popup benefits information button -->
     <div class="popup" id="offer_benefits">
       <div class="popup__block-logo">
         <img class="popup__block-img" src="img/logo.png" alt="">
@@ -679,33 +714,14 @@
       </div>
     </div>
 
-    
-  
-    
-
-
-
-
-
-  
-
-
-
-
-
- 
- 
-
-
-
-
-
-
-
 
     <a href="#" class="scrollup">Scrollup</a>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/libs.min.js"></script>
+
+     <script src="js/libs.min.js"></script>
+     <script src="js/script.js"></script>
     <script src="js/main.js"></script>
+    
+
   </body>
 </html>

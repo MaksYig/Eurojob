@@ -82,7 +82,7 @@ if (isset($_FILES['attachment'])) {
             $totalFileSize = $totalFileSize + $fileSize;
             if ($totalFileSize > MAX_FILES_SIZE) {
                 $json['result'] = 'error';
-                $json['error'] = 'File is too big ' . round(MAX_FILES_SIZE/1024/1024, 2) .  ' Mb. ' . 'Total files: ' . round($totalFileSize/1024/1024, 2) . ' Mb';
+                $json['error'] = 'File is too big ' . round(MAX_FILES_SIZE/1024/1024, 1) .  ' Mb. ' . 'Total files: ' . round($totalFileSize/1024/1024, 1) . ' Mb';
             }
         }
         } else {

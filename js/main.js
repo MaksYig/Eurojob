@@ -1,4 +1,5 @@
 $(function () {
+  /* Slider of main screen */
   $(".slider").slick({
     infinite: true,
     slidesToShow: 1,
@@ -9,6 +10,7 @@ $(function () {
     autoplaySpeed: 3000,
   });
 
+  /* Review slider */
   $(".review__slider").slick({
     infinite: true,
     slidesToShow: 3,
@@ -34,6 +36,7 @@ $(function () {
     });
   });
 
+  /* Scroll Up function */
   $(document).ready(function () {
     $(window).scroll(function () {
       if ($(this).scrollTop() > 150) {
@@ -44,7 +47,7 @@ $(function () {
     });
 
     $(".scrollup").click(function () {
-      $("html, body").animate({ scrollTop: 0 }, 600);
+      $("html, body").animate({ scrollTop: 0 }, 900);
       return false;
     });
   });
@@ -57,8 +60,34 @@ $(function () {
       {
         scrollTop: $($(this).attr("href")).offset().top,
       },
-      500,
+      900,
       "linear"
     );
   });
+
+  /* Number counting */
+  $(".count__number").each(function () {
+    $(this)
+      .prop("Counter", 0)
+      .animate(
+        {
+          Counter: $(this).text(),
+        },
+        {
+          duration: 4000,
+          easing: "swing",
+          step: function (now) {
+            $(this).text(Math.ceil(now));
+          },
+        }
+      );
+  });
+
+  //Popup ulod CV file buttom
+  $(document).ready( function() {
+    $("#fl_inp").change(function(){
+         var filename = $(this).val().replace(/.*\\/, "");
+         $("#fl_nm").html(filename);
+    });
+});
 });

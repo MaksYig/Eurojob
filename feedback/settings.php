@@ -11,7 +11,7 @@ const MAX_FILES_SIZE = 5242880;
 $allowedExtensions = array('doc', 'pdf');
 
 // Общее количество загружаемых файлов
-const COUNT_FILES = 2;
+const COUNT_FILES = 1;
 
 
 
